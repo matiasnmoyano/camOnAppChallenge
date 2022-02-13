@@ -4,7 +4,7 @@ import "./styles.css"
 import PreviewVideo from "../PreviewVideo"
 export default function Home () {
     return (
-       <Grid className="container">
+       <Grid className="containerHome">
            <Grid className='nav'>
                <Typography variant="h1">
                    Mis Videos

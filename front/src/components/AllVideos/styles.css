@@ -1,0 +1,12 @@
+.containerAllVideos{
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    margin: 50px !important;
+}
+.containerPreviews{
+    width: 80%;
+}
