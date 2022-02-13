@@ -1,7 +1,8 @@
 import React from "react";
-import {Grid, Typography} from "@mui/material"
+import {Button, Grid, Typography} from "@mui/material"
 import "./styles.css"
 import PreviewVideo from "../PreviewVideo"
+import Upload from "../Upload";
 export default function Home () {
     return (
        <Grid className="containerHome">
@@ -27,7 +28,7 @@ export default function Home () {
                 <PreviewVideo/>
             </Grid>
            </Grid>
-          
+            <Upload></Upload>
        </Grid>
     )
 }
