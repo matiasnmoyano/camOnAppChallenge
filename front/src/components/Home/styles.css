@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.lists{
+    display: flex;
+}
+.nav{
+    display: flex;
+    height: 15rem;
+    align-items: center;
+    justify-content: center;
+}
+.list1{
+    background-color: aqua;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+}
+.list2{
+    padding-top: 50px;
+    background-color: blue;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
