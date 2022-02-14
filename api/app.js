@@ -62,7 +62,7 @@ app.route("/addFav/:id").post((req,res) => {
 })
 app.route("/quitFav/:id").post((req,res) => {
     const {id} = req.params
-    Video.findOneAndUpdate({id:id},{fav:false},function(err,video){
+    Video.findOneAndUpdate({_id:id},{fav:false},function(err,video){
         err && res.status(500).send(err.message)
         console.log(id)
         console.log(video._id)
