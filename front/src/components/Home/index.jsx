@@ -38,8 +38,14 @@ console.log(videos)
             <Typography>
                    Favoritos
                 </Typography>
-                <PreviewVideo/>
-                <PreviewVideo/>
+               {
+                   videos &&
+                   videos.map((v) => {
+                       if(v.fav){
+                           return <PreviewVideo video={v}></PreviewVideo>
+                       }
+                   })
+               }
             </Grid>
            </Grid>
             <Upload></Upload>
