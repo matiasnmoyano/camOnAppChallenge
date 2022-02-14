@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import axios from 'axios'
+import { Button } from "@mui/material";
 export default function Upload(){
+
     const [file,setFile] = useState(null)
-    
-    const onClick = (e) =>{
+    const onClick = (e) => {
         e.preventDefault()
         let formData = new FormData()
         formData.append("image",file[0],"otracosa.png")
@@ -20,12 +21,16 @@ export default function Upload(){
         }) 
     }
     return (
-        <form onSubmit={onClick} encType="multipart/form-data">
+        <a href="http://localhost:4000/">
+            <Button>Subir video</Button>
+        </a>
+        
+      /*   <form onSubmit={onClick} encType="multipart/form-data">
             <input type='file' id="file" name="file" onChange={(e) => {
                 setFile(e.target.files)}}
             >
             </input>
             <input type="submit"/>
-        </form>
+        </form> */
     )
 }

@@ -21,7 +21,10 @@
 .details{
     height: 30%;
     width: 80%;
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
 }
 .btnVolver{
     margin-top: 30px !important;

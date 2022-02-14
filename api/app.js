@@ -30,26 +30,45 @@ app.get("/",(req,res) => {
 })
 app.post("/upload",upload.single("video"),(req,res) => {
     const {name,description,author} = req.body
-    const {file} = req.file
     console.log(req.file.originalname)
    let video = new Video({
        name,
        description,
        author,
-       path: req.file.originalname
+       path: req.file.originalname,
+       fav:false
    }) 
    video.save((err,video) => {
        err && res.status(500).send(err.message)
-       res.status(200).send("video cargado")
+       res.status(200).sendFile(__dirname + "/views/succes.html")
    })
 })
-app.route("/getVideo").get((req,res) => {
-    res.sendFile(__dirname + "/uploads/Captura de pantalla 2022-01-17 142711.png")
+app.route("/getVideo/:id").get((req,res) => {
+    const {id} = req.params
+    Video.findById(id,function(err,video){
+        err && res.status(500).send(err.message)
+        res.send(video)
+    })
+})
+app.route("/addFav/:id").post((req,res) => {
+    const {id} = req.params
+    Video.findOneAndUpdate({id:id},{fav:true},function(err,video){
+        err && res.status(500).send(err.message)
+        res.status(200).send(video)
+    })
+
+})
+app.route("/quitFav/:id").post((req,res) => {
+    const {id} = req.params
+    Video.findOneAndUpdate({id:id},{fav:false},function(err,video){
+        err && res.status(500).send(err.message)
+        res.status(200).send(video)
+    })
+
 })
 app.route("/getVideos").get((req,res) => {
     Video.paginate({},options,(err,videos) => {
         err && res.status(500).send(err.message)
-
         res.status(200).send(videos)
     })
 })

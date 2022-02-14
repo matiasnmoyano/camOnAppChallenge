@@ -5,7 +5,8 @@ const VideoSchema = new Schema ({
     name: {type: String},
     description : {type: String},
     author:{type: String},
-    path: {type: String}
+    path: {type: String},
+    fav: {type: Boolean}
 })
 VideoSchema.plugin(mongoosePaginate)
 
