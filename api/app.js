@@ -76,6 +76,13 @@ app.route("/getVideos").get((req,res) => {
         res.status(200).send(videos)
     })
 })
+app.route("/deleteVideo/:id").delete((req,res) => {
+    const {id} = req.params
+    Video.findByIdAndDelete({_id:id},(err,video) => {
+        err && res.status(500).send(err.message)
+        res.status(200).send(video)
+    })
+})
 mongoose.connect('mongodb://localhost:27017/camonapp')
 .then(() => {
     app.listen(port, () => {
