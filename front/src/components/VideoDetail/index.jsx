@@ -19,19 +19,22 @@ export default function VideoDetail () {
         navigate("/")
     }
     function handleFav () {
-        console.log(id)
         axios.post(`http://localhost:4000/addFav/${id}`)
         .then((r) => {
-            console.log(r)
             location.reload()
         })
     }
     function handleQuitFav () {
-        console.log(id)
         axios.post(`http://localhost:4000/quitFav/${id}`)
         .then((r) => {
-            console.log(r)
             location.reload()
+        })
+    }
+    function handleDelete () {
+        axios.delete(`http://localhost:4000/deleteVideo/${id}`)
+        .then((r) => {
+            console.log("hola")
+            navigate("/")
         })
     }
     const myUrl = "http://localhost:8887/api/uploads/"
@@ -60,6 +63,7 @@ export default function VideoDetail () {
                 :
                 <Button onClick={() => handleQuitFav()}>Quitar de favoritos</Button>
            }
+                <Button className="btnDelete" onClick={() => handleDelete()}>Borrar Video</Button>
         </Paper>
         <Button onClick={() => goBack()} className='btnVolver'variant='outlined'>Volver</Button>
         </Grid>
