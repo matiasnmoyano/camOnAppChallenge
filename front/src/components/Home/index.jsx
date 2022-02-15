@@ -1,9 +1,10 @@
 import React, {useEffect,useLayoutEffect,useState} from "react";
-import {Button, Grid, Typography} from "@mui/material"
+import {Button, Grid, Typography, Paper} from "@mui/material"
 import "./styles.css"
 import PreviewVideo from "../PreviewVideo"
 import Upload from "../Upload";
 import axios from "axios";
+import Nav from '../Nav'
 export default function Home () {
 const [videos,setVideos] = useState([])
 useEffect(()=>{
@@ -21,10 +22,11 @@ console.log(videos)
                <Typography variant="h1">
                    Mis Videos
                </Typography>
+               <Nav></Nav>
            </Grid>
            <Grid className='lists'>
-            <Grid className="list1">
-                <Typography>
+            <Paper elevation={5} className="list1">
+                <Typography className="subtitle">
                    Últimos videos subidos
                 </Typography>
                 {
@@ -33,9 +35,9 @@ console.log(videos)
                         return <PreviewVideo video={v}/>
                     })
                 }
-            </Grid>
-            <Grid className="list2">
-            <Typography>
+            </Paper>
+            <Paper elevation={5} className="list2">
+            <Typography className="subtitle">
                    Favoritos
                 </Typography>
                {
@@ -46,7 +48,7 @@ console.log(videos)
                        }
                    })
                }
-            </Grid>
+            </Paper>
            </Grid>
             <Upload></Upload>
        </Grid>

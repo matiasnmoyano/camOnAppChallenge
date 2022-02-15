@@ -3,6 +3,7 @@
     flex-direction: column !important;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to bottom, rgb(65, 150, 247), white);
 }
 .title{
     margin: 50px !important;

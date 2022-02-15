@@ -8,10 +8,13 @@
 .nav{
     display: flex;
     height: 15rem;
+    flex-direction: column !important;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(to bottom, rgb(65, 150, 247), white);
 }
 .list1{
+    margin:20px;
     background-color: aqua;
     width: 50%;
     display: flex;
@@ -21,9 +24,13 @@
 }
 .list2{
     padding-top: 50px;
+    margin:20px;
     background-color: blue;
     width: 50%;
     display: flex;
     align-items: center;
     flex-direction: column !important;
+}
+.subtitle{
+    font-weight: 700 !important;
 }

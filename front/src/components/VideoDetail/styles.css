@@ -4,6 +4,7 @@
     align-items: center;
     height: 100vh;
     flex-direction: column !important;
+    background: linear-gradient(to bottom, rgb(65, 150, 247), white);
 }
 .paperVideo{
     height: 80%;

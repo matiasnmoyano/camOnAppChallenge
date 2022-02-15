@@ -7,18 +7,19 @@ import ReactPlayer from "react-player"
 export default function VideoDetail () {
     const [detail,setDetail] = useState({})
     let navigate = useNavigate()
-    const {id} = useParams()
+    let {id} = useParams()
     useEffect(() => {
         axios.get(`http://localhost:4000/getVideo/${id}`)
         .then((rta) => {
             setDetail(rta.data)
-            console.log(detail)
+            console.log(detail,"soy details")
         })
     },[])
     function goBack () {
         navigate("/")
     }
     function handleFav () {
+        console.log(id)
         axios.post(`http://localhost:4000/addFav/${id}`)
         .then((r) => {
             console.log(r)
@@ -26,6 +27,7 @@ export default function VideoDetail () {
         })
     }
     function handleQuitFav () {
+        console.log(id)
         axios.post(`http://localhost:4000/quitFav/${id}`)
         .then((r) => {
             console.log(r)

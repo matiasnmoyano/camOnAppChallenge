@@ -1,6 +1,8 @@
-.nav{
+.buttonsNav{
     display: flex;
-    height: 15rem;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+}
+.btn{
+    font-weight: 600;
 }

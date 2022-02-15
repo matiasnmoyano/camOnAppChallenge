@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from 'axios'
 import { Button } from "@mui/material";
+import "./styles.css"
 export default function Upload(){
 
     const [file,setFile] = useState(null)
@@ -21,9 +22,7 @@ export default function Upload(){
         }) 
     }
     return (
-        <a href="http://localhost:4000/">
-            <Button>Subir video</Button>
-        </a>
+            <Button className="buttonSubir" variant="outlined" href="http://localhost:4000/" >Subir video</Button>
         
       /*   <form onSubmit={onClick} encType="multipart/form-data">
             <input type='file' id="file" name="file" onChange={(e) => {
